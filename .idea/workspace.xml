@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="80b509cc-3bef-4323-bf53-cff502a5bb3c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2K82Xqs4Hv8dtTACRE1qEJu0aWa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/DoAnTotNghiep/TLLightBackend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b03e09afac5586f82e688603bfd074e2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.common.CommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80b509cc-3bef-4323-bf53-cff502a5bb3c" name="Changes" comment="" />
+      <created>1673341931403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673341931403</updated>
+      <workItem from="1673341932612" duration="3731000" />
+      <workItem from="1673401520898" duration="6767000" />
+      <workItem from="1673431847358" duration="2203000" />
+      <workItem from="1673444695616" duration="1524000" />
+      <workItem from="1673487556170" duration="7936000" />
+      <workItem from="1673525586966" duration="654000" />
+      <workItem from="1673593057796" duration="13000" />
+      <workItem from="1673593181449" duration="448000" />
+      <workItem from="1673594197408" duration="7000" />
+      <workItem from="1675047565947" duration="3573000" />
+      <workItem from="1675051186706" duration="1848000" />
+      <workItem from="1675306136975" duration="117000" />
+      <workItem from="1675320703008" duration="12000" />
+      <workItem from="1675844697248" duration="7936000" />
+      <workItem from="1675856299914" duration="1184000" />
+      <workItem from="1675858134601" duration="3158000" />
+      <workItem from="1675905912308" duration="10015000" />
+      <workItem from="1675923687400" duration="6567000" />
+      <workItem from="1675949067925" duration="3675000" />
+      <workItem from="1676013777791" duration="2857000" />
+      <workItem from="1676088443682" duration="14840000" />
+      <workItem from="1676361832218" duration="7221000" />
+      <workItem from="1676369931050" duration="34000" />
+      <workItem from="1676452889362" duration="344000" />
+      <workItem from="1676512245000" duration="7960000" />
+      <workItem from="1676599965197" duration="3114000" />
+      <workItem from="1676640109603" duration="851000" />
+      <workItem from="1676778282862" duration="8706000" />
+      <workItem from="1676856760797" duration="25000" />
+      <workItem from="1677908266243" duration="1461000" />
+      <workItem from="1678070959890" duration="4000" />
+      <workItem from="1679678161429" duration="1898000" />
+      <workItem from="1679739029716" duration="4993000" />
+      <workItem from="1680449966277" duration="2882000" />
+      <workItem from="1680523020051" duration="1235000" />
+      <workItem from="1680799029062" duration="1029000" />
+      <workItem from="1680949859791" duration="9127000" />
+      <workItem from="1681010482585" duration="8964000" />
+      <workItem from="1681128328394" duration="10760000" />
+      <workItem from="1681220692963" duration="6772000" />
+      <workItem from="1681300717503" duration="605000" />
+      <workItem from="1681316475039" duration="1628000" />
+      <workItem from="1681387021021" duration="577000" />
+      <workItem from="1681388226352" duration="78000" />
+      <workItem from="1681551382996" duration="1243000" />
+      <workItem from="1681906785617" duration="11394000" />
+      <workItem from="1682007499881" duration="3664000" />
+      <workItem from="1682078540445" duration="2003000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/product/ProductCategoriesDaoImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/token/TokenDaoImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.jdbc.core.namedparam.MapSqlParameterSource" memberName="values" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((LinkedHashMap)params.values).entrySet().toArray()[0]" custom="java.util.LinkedHashMap" />
+        <watch expression="((LinkedHashMap)out).entrySet().toArray()[0]" custom="java.util.LinkedHashMap" />
+        <watch expression="((StandardMultipartHttpServletRequest)multipartRequest).multipartFiles" custom="org.springframework.web.multipart.support.StandardMultipartHttpServletRequest" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

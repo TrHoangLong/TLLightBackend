@@ -1,20 +1,20 @@
-/****** Object:  StoredProcedure [dbo].[ProductInsert]    Script Date: 4/21/2023 7:32:39 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductInsert]    Script Date: 4/22/2023 1:04:35 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductInsert]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[ProductInsert]    Script Date: 4/21/2023 7:32:39 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[ProductInsert]    Script Date: 4/22/2023 1:04:35 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[ProductInsert]
+CREATE PROCEDURE [dbo].[ProductInsert] 
 	@UserId VARCHAR(30),
 	@ProductId VARCHAR(20),
 	@CategoryId VARCHAR(20),
@@ -31,42 +31,48 @@ BEGIN
 	SET NOCOUNT ON;
 
 	IF EXISTS (SELECT 1 FROM Product WHERE ProductId = @ProductId)
-BEGIN
+	BEGIN
 		RAISERROR (N'Sản phẩm đã được khai báo', 15, 1);
 		RETURN;
-END
+	END
+
+	IF NOT EXISTS (SELECT 1 FROM ProductCategories WHERE CategoryId = @CategoryId)
+	BEGIN
+		RAISERROR (N'Loại sản phẩm không đúng', 15, 1);
+		RETURN;
+	END
 
     -- Insert statements for procedure here
-INSERT INTO [dbo].[Product]
-(
-    [ProductId]
-    ,[CategoryId]
-    ,[ProductName]
-    ,[ProductPrice]
-    ,[Description]
-    ,[Quantity]
-    ,[ProductImage]
-    ,[Status]
-    ,[CreatedUserId]
-    ,[CreatedTime]
-    ,[UpdatedUserId]
-    ,[UpdatedTime]
-)
-VALUES
+	INSERT INTO [dbo].[Product]
     (
-    @ProductId,
-    @CategoryId,
-    @ProductName,
-    @ProductPrice,
-    @Description,
-    @Quantity,
-    @ProductImage,
-    @Status,
-    @UserId,
-    GETDATE(),
-    @UserId,
-    GETDATE()
-    );
+		[ProductId]
+		,[CategoryId]
+		,[ProductName]
+		,[ProductPrice]
+		,[Description]
+		,[Quantity]
+		,[ProductImage]
+		,[Status]
+		,[CreatedUserId]
+		,[CreatedTime]
+		,[UpdatedUserId]
+		,[UpdatedTime]
+	)
+     VALUES
+	 (
+		@ProductId,
+		@CategoryId,
+		@ProductName,
+		@ProductPrice,
+		@Description,
+		@Quantity,
+		@ProductImage,
+		@Status,
+		@UserId,
+		GETDATE(),
+		@UserId,
+		GETDATE()
+	 );
 END
 GO
 

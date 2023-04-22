@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/21/2023 7:33:01 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/22/2023 1:06:30 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductUpdate]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/21/2023 7:33:01 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/22/2023 1:06:30 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 -- =============================================
@@ -15,7 +15,7 @@ DROP PROCEDURE IF EXISTS [dbo].[ProductUpdate]
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[ProductUpdate]
+CREATE PROCEDURE [dbo].[ProductUpdate] 
 	@UserId VARCHAR(30),
 	@ProductId VARCHAR(20),
 	@CategoryId VARCHAR(20),
@@ -32,28 +32,34 @@ BEGIN
 	SET NOCOUNT ON;
 
     IF NOT EXISTS (SELECT 1 FROM Product WHERE ProductId = @ProductId)
-BEGIN
+	BEGIN
 		RAISERROR (N'Sản phẩm chưa được khai báo', 15, 1);
 		RETURN;
-END
+	END
 
-UPDATE [dbo].[Product]
-SET
-    CategoryId = @CategoryId,
-    ProductName = @ProductName,
-    ProductPrice = @ProductPrice,
-    Description = @Description,
-    Quantity = @Quantity,
-    ProductImage = (
-    CASE
-    WHEN @ProductImage IS NULL THEN ProductImage
-    ELSE @ProductImage
-    END
-    ),
-    Status = @Status,
-    UpdatedUserId = @UserId,
-    UpdatedTime = GETDATE()
-WHERE ProductId = @ProductId;
+	IF NOT EXISTS (SELECT 1 FROM ProductCategories WHERE CategoryId = @CategoryId)
+	BEGIN
+		RAISERROR (N'Loại sản phẩm không đúng', 15, 1);
+		RETURN;
+	END
+
+	UPDATE [dbo].[Product]
+	SET
+		CategoryId = @CategoryId,
+		ProductName = @ProductName,
+		ProductPrice = @ProductPrice,
+		Description = @Description,
+		Quantity = @Quantity,
+		ProductImage = (
+			CASE 
+				WHEN @ProductImage IS NULL THEN ProductImage
+				ELSE @ProductImage
+			END
+		),
+		Status = @Status,
+		UpdatedUserId = @UserId,
+		UpdatedTime = GETDATE()
+	WHERE ProductId = @ProductId;
 
 END
 GO

@@ -5,6 +5,8 @@ import com.example.backend.admin.service.ISysService;
 import com.example.common.base.BaseResponse;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
+import com.example.common.domain.sys.SysCart;
+import com.example.common.domain.sys.SysOrder;
 import com.example.common.domain.sys.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -62,6 +64,87 @@ public class SystemRestAPI {
             Cred cred = jwtAuthenticalService.checkSession(token);
             sysService.sysUserDelete(cred, body);
 
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/syscart/get", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysCartGet(@RequestBody SysCart body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            List<SysCart> sysCarts = sysService.getSysCart(cred, body);
+            response.setData(sysCarts);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/syscart/insert", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysCartInsert(@RequestBody SysCart body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.insertSysCart(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/syscart/update", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysCartUpdate(@RequestBody SysCart body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.updateSysCart(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/syscart/delete", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysCartDelete(@RequestBody SysCart body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.deleteSysCart(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/syscart/order", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysCartOrder(@RequestBody List<SysOrder> body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.orderSysCart(cred, body);
             response.setResultCode(0);
         } catch (GTException ex) {
             response.setErrorCode(ex.getGTErrorCode());

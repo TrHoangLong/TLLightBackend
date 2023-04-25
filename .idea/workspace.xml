@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="80b509cc-3bef-4323-bf53-cff502a5bb3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/ProductInsert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/ProductInsert.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/ProductUpdate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/ProductUpdate.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +53,31 @@
     </option>
   </component>
   <component name="ProjectId" id="2K82Xqs4Hv8dtTACRE1qEJu0aWa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/DoAn2023/TLLightBackend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b03e09afac5586f82e688603bfd074e2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/DoAn2023/TLLightBackend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b03e09afac5586f82e688603bfd074e2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -147,6 +154,9 @@
       <workItem from="1682007499881" duration="3664000" />
       <workItem from="1682078540445" duration="2003000" />
       <workItem from="1682082105877" duration="2562000" />
+      <workItem from="1682144451502" duration="14039000" />
+      <workItem from="1682338724349" duration="5668000" />
+      <workItem from="1682431988686" duration="6156000" />
     </task>
     <servers />
   </component>

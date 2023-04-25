@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/22/2023 1:06:30 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/23/2023 12:21:36 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductUpdate]
 GO
 
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/22/2023 1:06:30 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/23/2023 12:21:36 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -37,9 +37,9 @@ BEGIN
 		RETURN;
 	END
 
-	IF NOT EXISTS (SELECT 1 FROM ProductCategories WHERE CategoryId = @CategoryId)
+	IF NOT EXISTS (SELECT 1 FROM ProductCategories WHERE CategoryId = @CategoryId AND [Status] = 1)
 	BEGIN
-		RAISERROR (N'Loại sản phẩm không đúng', 15, 1);
+		RAISERROR (N'Loại sản phẩm không đúng hoặc đang đóng', 15, 1);
 		RETURN;
 	END
 

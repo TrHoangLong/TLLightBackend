@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/25/2023 9:18:33 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/26/2023 10:33:29 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysCartOrder]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/25/2023 9:18:33 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/26/2023 10:33:29 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,7 +14,7 @@ GO
 
 CREATE PROCEDURE [dbo].[SysCartOrder]
 	@SysUserId VARCHAR(30),
-	@CustName VARCHAR(50),
+	@CustName NVARCHAR(50),
 	@MobileNo VARCHAR(13),
 	@Address NVARCHAR(500),
 	@ProductId VARCHAR(20),

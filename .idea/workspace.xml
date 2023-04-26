@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/2.Procedure/ProductInsert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/ProductInsert.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/2.Procedure/ProductUpdate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/ProductUpdate.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +157,8 @@
       <workItem from="1682144451502" duration="14039000" />
       <workItem from="1682338724349" duration="5668000" />
       <workItem from="1682431988686" duration="6156000" />
+      <workItem from="1682442682203" duration="1366000" />
+      <workItem from="1682520137587" duration="5693000" />
     </task>
     <servers />
   </component>
@@ -175,6 +177,11 @@
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/token/TokenDaoImpl.java</url>
           <line>35</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysOrderDaoImpl.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

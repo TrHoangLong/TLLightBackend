@@ -19,6 +19,16 @@ public class SysOrder implements Serializable {
     private Date updatedTime;
     private Integer sysCartID;
 
+    private String productName;
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
     public Date getSysOrderDate() {
         return sysOrderDate;
     }

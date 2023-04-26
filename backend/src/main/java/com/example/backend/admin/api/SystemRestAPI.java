@@ -154,4 +154,70 @@ public class SystemRestAPI {
         }
         return response;
     }
+
+    @RequestMapping(value = "/sysorder/get", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysOrderGet(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            List<SysOrder> sysOrdersList = sysService.getSysOrder(cred, body);
+            response.setData(sysOrdersList);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/sysorder/updatestatus", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysOrderUpdateStatus(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.updateStatusSysOrder(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/sysorder/cancel", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysOrderCancel(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.cancelSysOrder(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/sysorder/order", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysOrdeOrder(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.orderSysOrder(cred, body);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
 }

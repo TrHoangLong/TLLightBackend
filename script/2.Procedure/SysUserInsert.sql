@@ -1,25 +1,21 @@
-/****** Object:  StoredProcedure [dbo].[SysUserInsert]    Script Date: 4/10/2023 9:09:24 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysUserInsert]    Script Date: 4/27/2023 11:23:22 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysUserInsert]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[SysUserInsert]    Script Date: 4/10/2023 9:09:24 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[SysUserInsert]    Script Date: 4/27/2023 11:23:22 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 
-CREATE PROCEDURE [dbo].[SysUserInsert]
+CREATE PROCEDURE [dbo].[SysUserInsert] 
 	@SysUserId VARCHAR(30),
 	@Password VARCHAR(100),
 	@UserName NVARCHAR(50),
-	@Gender INT,
-	@Birthday DATE,
-	@MobileNo VARCHAR(13),
-	@Email NVARCHAR(50),
-	@Address NVARCHAR(500),
+	@Role INT,
 	@Status INT,
 	@Remarks VARCHAR(200)
 AS
@@ -29,37 +25,29 @@ BEGIN
 	SET NOCOUNT ON;
 
     IF EXISTS (SELECT 1 FROM SysUser WHERE SysUserId = @SysUserId AND [Status] = 1 )
-BEGIN
+	BEGIN
 		RAISERROR (N'Tài khoản đã tồn tại', 15, 1);
 		RETURN;
-END
+	END
 
-INSERT INTO SysUser
-(
-    SysUserId,
-    [Password],
-    UserName,
-    Gender,
-    Birthday,
-    MobileNo,
-    Email,
-    [Address],
-    [Status],
-    Remarks
-)
-VALUES
-    (
-        @SysUserId,
-        @Password,
-        @UserName,
-        @Gender,
-        @Birthday,
-        @MobileNo,
-        @Email,
-        @Address,
-        @Status,
-        @Remarks
-    );
+	INSERT INTO SysUser
+	(
+		SysUserId,
+		[Password],
+		UserName,
+		[Role],
+		[Status],
+		Remarks
+	)
+	VALUES
+	(
+		@SysUserId,
+		@Password,
+		@UserName,
+		@Role,
+		@Status,
+		@Remarks
+	);
 
 END
 GO

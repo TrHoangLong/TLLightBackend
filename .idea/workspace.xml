@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="80b509cc-3bef-4323-bf53-cff502a5bb3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ISysService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/jwt/JWTAuthenticalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/jwt/JWTAuthenticalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysUserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/product/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/product/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/base/Cred.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/base/Cred.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/sys/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/SysUserGetList.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/SysUserGetList.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/SysUserInsert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/SysUserInsert.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +161,8 @@
       <workItem from="1682338724349" duration="5668000" />
       <workItem from="1682431988686" duration="6156000" />
       <workItem from="1682442682203" duration="1366000" />
-      <workItem from="1682520137587" duration="5693000" />
+      <workItem from="1682520137587" duration="6828000" />
+      <workItem from="1682608510061" duration="3265000" />
     </task>
     <servers />
   </component>
@@ -182,6 +186,11 @@
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysOrderDaoImpl.java</url>
           <line>70</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/sys/SysServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

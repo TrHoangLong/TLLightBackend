@@ -1,9 +1,11 @@
 package com.example.backend.admin.auth.jwt;
 
 
+import com.example.backend.admin.dao.ISysUserDao;
 import com.example.backend.admin.dao.impl.token.TokenDaoImpl;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
+import com.example.common.domain.sys.SysUser;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
 
     @Autowired
     private TokenDaoImpl tokenDao;
+
+    @Autowired
+    private ISysUserDao sysUserDao;
 
     @Override
     public String generateToken(Cred cred) throws Exception {
@@ -44,7 +49,11 @@ public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
     public Cred getCredFromJWT(String token) throws Exception {
         Cred cred = new Cred();
 
-        cred.setUserId(Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody().getSubject());
+        String userId = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody().getSubject();
+        SysUser sysUser = sysUserDao.getByUserID(cred, userId);
+
+        cred.setUserId(userId);
+        cred.setRole(sysUser.getRole());
 
         if(cred == null) {
             throw new GTException("ErrToken: Không lấy được thông tin người dùng", null, null);

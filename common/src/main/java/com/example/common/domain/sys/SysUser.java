@@ -5,94 +5,58 @@ import java.util.Date;
 
 public class SysUser implements Serializable {
 
-    private String SysUserId;
-    private String UserName;
-    private String MobileNo;
-    private Integer Gender;
-    private Date Birthday;
-    private String Email;
-    private String Password;
-    private Integer Status;
-    private String Address;
-    private String Remarks;
+    private String sysUserId;
+    private String userName;
+    private Integer role;
+    private String password;
+    private Integer status;
+    private String remarks;
 
     public String getSysUserId() {
-        return SysUserId;
+        return sysUserId;
     }
 
     public void setSysUserId(String sysUserId) {
-        SysUserId = sysUserId;
+        this.sysUserId = sysUserId;
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
-    public String getMobileNo() {
-        return MobileNo;
+    public Integer getRole() {
+        return role;
     }
 
-    public void setMobileNo(String mobileNo) {
-        MobileNo = mobileNo;
-    }
-
-    public Integer getGender() {
-        return Gender;
-    }
-
-    public void setGender(Integer gender) {
-        Gender = gender;
-    }
-
-    public Date getBirthday() {
-        return Birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        Birthday = birthday;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
+    public void setRole(Integer role) {
+        this.role = role;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public Integer getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(Integer status) {
-        Status = status;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
+        this.status = status;
     }
 
     public String getRemarks() {
-        return Remarks;
+        return remarks;
     }
 
     public void setRemarks(String remarks) {
-        Remarks = remarks;
+        this.remarks = remarks;
     }
 }

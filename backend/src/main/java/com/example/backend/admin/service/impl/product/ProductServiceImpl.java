@@ -5,6 +5,7 @@ import com.example.backend.admin.dao.IProductCategoriesDao;
 import com.example.backend.admin.service.IProductService;
 import com.example.backend.global.FileUploadUtils;
 import com.example.common.base.Cred;
+import com.example.common.base.GTException;
 import com.example.common.domain.product.Product;
 import com.example.common.domain.product.ProductCategories;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,18 +45,33 @@ public class ProductServiceImpl implements IProductService {
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void productCategoriesInsert(Cred cred, ProductCategories productGroup) throws Exception {
+
+        if (cred.getRole() > 2) {
+            throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
+        }
+
         productCategoriesDao.insert(cred, productGroup);
     }
 
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void productCategoriesUpdate(Cred cred, ProductCategories productGroup) throws Exception {
+
+        if (cred.getRole() > 2) {
+            throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
+        }
+
         productCategoriesDao.update(cred, productGroup);
     }
 
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void productCategoriesInsertExcel(Cred cred, List<ProductCategories> categoriesList) throws Exception {
+
+        if (cred.getRole() > 2) {
+            throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
+        }
+
         for (ProductCategories categories : categoriesList) {
             productCategoriesDao.insert(cred, categories);
         }
@@ -86,6 +102,11 @@ public class ProductServiceImpl implements IProductService {
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void productInsert(Cred cred, HttpServletRequest request) throws Exception {
+
+        if (cred.getRole() > 2) {
+            throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
+        }
+
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         String info = request.getParameter("info");
 
@@ -105,6 +126,11 @@ public class ProductServiceImpl implements IProductService {
     @Transactional(rollbackFor = {Exception.class})
     @Override
     public void productUpdate(Cred cred, HttpServletRequest request) throws Exception {
+
+        if (cred.getRole() > 2) {
+            throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
+        }
+
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         String info = request.getParameter("info");
 

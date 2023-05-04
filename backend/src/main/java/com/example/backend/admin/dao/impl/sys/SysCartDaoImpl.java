@@ -37,7 +37,8 @@ public class SysCartDaoImpl implements ISysCartDao {
             simpleJdbcCall.withProcedureName("SysCartGet")
                     .returningResultSet("SysCart", BeanPropertyRowMapper.newInstance(SysCart.class));
             params.addValue("SysUserId", obj.getSysUserId() == null ? "" : obj.getSysUserId());
-            params.addValue("ProductId", obj.getProductId() == null ? "" :obj.getProductId());
+            params.addValue("ProductId", obj.getProductId() == null ? "" : obj.getProductId());
+            params.addValue("Status", obj.getStatus() == null ? 0 : obj.getStatus());
 
             Map<String, Object> out = simpleJdbcCall.execute(params);
             List<SysCart> listCart = (List<SysCart>) out.get("SysCart");

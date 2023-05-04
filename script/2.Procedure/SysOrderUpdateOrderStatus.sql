@@ -25,6 +25,12 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
+	IF @OrderStatus = 9
+	BEGIN
+		RAISERROR (N'Hủy đơn hàng không xử lý ở đây', 15, 1);
+		RETURN;
+	END
+
 	UPDATE SysOrders
 	SET 
 		OrderStatus = @OrderStatus,

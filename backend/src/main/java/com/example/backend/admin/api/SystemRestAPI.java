@@ -124,7 +124,7 @@ public class SystemRestAPI {
     }
 
     @RequestMapping(value = "/syscart/delete", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse sysCartDelete(@RequestBody SysCart body, @RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse sysCartDelete(@RequestBody List<SysCart> body, @RequestHeader("Authorization") String token) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
             Cred cred = jwtAuthenticalService.checkSession(token);
@@ -173,7 +173,7 @@ public class SystemRestAPI {
     }
 
     @RequestMapping(value = "/sysorder/updatestatus", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse sysOrderUpdateStatus(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse sysOrderUpdateStatus(@RequestBody List<SysOrder> body, @RequestHeader("Authorization") String token) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
             Cred cred = jwtAuthenticalService.checkSession(token);
@@ -189,7 +189,7 @@ public class SystemRestAPI {
     }
 
     @RequestMapping(value = "/sysorder/cancel", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse sysOrderCancel(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse sysOrderCancel(@RequestBody List<SysOrder> body, @RequestHeader("Authorization") String token) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
             Cred cred = jwtAuthenticalService.checkSession(token);

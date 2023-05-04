@@ -1,20 +1,18 @@
-/****** Object:  StoredProcedure [dbo].[SysCardGet]    Script Date: 4/24/2023 8:46:17 PM ******/
-DROP PROCEDURE IF EXISTS [dbo].[SysCardGet]
+/****** Object:  StoredProcedure [dbo].[SysCartGet]    Script Date: 5/2/2023 11:20:29 PM ******/
+DROP PROCEDURE IF EXISTS [dbo].[SysCartGet]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysCardGet]    Script Date: 4/24/2023 8:46:17 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartGet]    Script Date: 5/2/2023 11:20:29 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-
-
-
-CREATE PROCEDURE [dbo].[SysCardGet]
+CREATE PROCEDURE [dbo].[SysCartGet]
 	@SysUserId VARCHAR(30),
-	@ProductId VARCHAR(20)
+	@ProductId VARCHAR(20),
+	@Status INT
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -29,7 +27,6 @@ BEGIN
 	LEFT JOIN Product p ON sc.ProductId = p.ProductId
 	WHERE (sc.SysUserId = @SysUserId OR @SysUserId = '')
 	AND (sc.ProductId = @ProductId OR @ProductId = '')
+	AND (sc.[Status] = @Status OR @Status = 0)
 END
 GO
-
-

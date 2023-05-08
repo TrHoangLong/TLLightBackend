@@ -1,4 +1,4 @@
-package com.example.backend.admin.service.impl.product;
+package com.example.backend.admin.service.impl;
 
 import com.example.backend.admin.dao.IProductDao;
 import com.example.backend.admin.dao.IProductCategoriesDao;

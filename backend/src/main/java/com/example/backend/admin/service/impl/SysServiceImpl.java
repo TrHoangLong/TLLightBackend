@@ -1,4 +1,4 @@
-package com.example.backend.admin.service.impl.sys;
+package com.example.backend.admin.service.impl;
 
 import com.example.backend.admin.auth.hash.MD5HashServiceImpl;
 import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;

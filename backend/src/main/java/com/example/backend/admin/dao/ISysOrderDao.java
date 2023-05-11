@@ -10,4 +10,5 @@ public interface ISysOrderDao {
     void order(Cred cred, SysOrder sysOrder) throws Exception;
     void updateStatus(Cred cred, SysOrder sysOrder) throws Exception;
     void cancel(Cred cred, SysOrder sysOrder) throws Exception;
+    List<SysOrder> getHist(Cred cred, SysOrder sysOrder) throws Exception;
 }

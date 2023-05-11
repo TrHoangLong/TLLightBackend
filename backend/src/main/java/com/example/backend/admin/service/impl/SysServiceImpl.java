@@ -5,6 +5,7 @@ import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;
 import com.example.backend.admin.dao.ISysCartDao;
 import com.example.backend.admin.dao.ISysOrderDao;
 import com.example.backend.admin.dao.ISysUserDao;
+import com.example.backend.admin.dao.ISystemDao;
 import com.example.backend.admin.service.ISysService;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
@@ -36,6 +37,9 @@ public class SysServiceImpl implements ISysService {
 
     @Autowired
     private ISysOrderDao sysOrderDao;
+
+    @Autowired
+    private ISystemDao systemDao;
 
     @Override
     public List<SysUser> sysUserGetList(Cred cred, SysUser user) throws Exception {
@@ -140,5 +144,16 @@ public class SysServiceImpl implements ISysService {
         for (SysOrder order: sysOrder) {
             sysOrderDao.cancel(cred, order);
         }
+    }
+
+    @Override
+    public List<SysOrder> getHistSysOrder(Cred cred, SysOrder sysOrder) throws Exception {
+        return sysOrderDao.getHist(cred, sysOrder);
+    }
+
+    @Transactional(rollbackFor = { Exception.class })
+    @Override
+    public void systemCloseDate(Cred cred) throws Exception {
+        systemDao.closeDate(cred);
     }
 }

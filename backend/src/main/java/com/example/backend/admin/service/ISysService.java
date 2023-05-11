@@ -24,4 +24,7 @@ public interface ISysService {
     void orderSysOrder(Cred cred, SysOrder sysOrder) throws Exception;
     void updateStatusSysOrder(Cred cred, List<SysOrder> sysOrder) throws Exception;
     void cancelSysOrder(Cred cred, List<SysOrder> sysOrder) throws Exception;
+    List<SysOrder> getHistSysOrder(Cred cred, SysOrder sysOrder) throws Exception;
+
+    void systemCloseDate(Cred cred) throws Exception;
 }

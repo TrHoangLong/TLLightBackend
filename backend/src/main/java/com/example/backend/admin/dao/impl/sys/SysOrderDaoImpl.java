@@ -111,4 +111,31 @@ public class SysOrderDaoImpl implements ISysOrderDao {
             throw Utils.processException(ex);
         }
     }
+
+    @Override
+    public List<SysOrder> getHist(Cred cred, SysOrder sysOrder) throws Exception {
+        List<SysOrder> resultData = new ArrayList<>();
+
+        try {
+            SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
+            MapSqlParameterSource params = new MapSqlParameterSource();
+
+            simpleJdbcCall.withProcedureName("SysOrderHistGet")
+                    .returningResultSet("SysOrder", BeanPropertyRowMapper.newInstance(SysOrder.class));
+            params.addValue("SysUserId", sysOrder.getSysUserId() == null ? "" : sysOrder.getSysUserId());
+            params.addValue("SysOrderDate", DateTimeUtils.toSqlDate(sysOrder.getSysOrderDate()));
+            params.addValue("ProductId", sysOrder.getProductId() == null ? "" :sysOrder.getProductId());
+            params.addValue("OrderStatus", sysOrder.getOrderStatus() == null ? 0 :sysOrder.getOrderStatus());
+
+            Map<String, Object> out = simpleJdbcCall.execute(params);
+            List<SysOrder> orderList = (List<SysOrder>) out.get("SysOrder");
+
+            if(orderList != null) {
+                resultData = orderList;
+            }
+        } catch (Exception ex) {
+            throw Utils.processException(ex);
+        }
+        return resultData;
+    }
 }

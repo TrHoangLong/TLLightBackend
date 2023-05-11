@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/26/2023 10:33:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 5/10/2023 9:46:21 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysCartOrder]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 4/26/2023 10:33:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartOrder]    Script Date: 5/10/2023 9:46:21 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -76,7 +76,7 @@ BEGIN
 	)
     VALUES
 	(
-		GETDATE(),
+		dbo.GetBusinessDate(),
 		@SysUserId,
 		1,
 		@CustName,

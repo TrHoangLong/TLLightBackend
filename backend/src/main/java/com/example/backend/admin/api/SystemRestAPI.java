@@ -220,4 +220,36 @@ public class SystemRestAPI {
         return response;
     }
 
+    @RequestMapping(value = "/sysorderhist/get", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse sysOrderGetHist(@RequestBody SysOrder body, @RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            List<SysOrder> sysOrdersList = sysService.getHistSysOrder(cred, body);
+            response.setData(sysOrdersList);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/system/closedate", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse systemCloseDate(@RequestHeader("Authorization") String token) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = jwtAuthenticalService.checkSession(token);
+            sysService.systemCloseDate(cred);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
 }

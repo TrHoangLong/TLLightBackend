@@ -81,10 +81,8 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Transactional(rollbackFor = {Exception.class})
     @Override
-    public void cancelConfirmCustOrders(Cred cred, List<CustOrders> custOrders) throws Exception {
-        for (CustOrders orders: custOrders) {
-            custOrdersDao.cancelConfirm(cred, orders);
-        }
+    public void cancelConfirmCustOrders(Cred cred, CustOrders custOrders) throws Exception {
+            custOrdersDao.cancelConfirm(cred, custOrders);
     }
 
     @Override

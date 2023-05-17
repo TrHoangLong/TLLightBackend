@@ -161,7 +161,7 @@ public class CustomerAPI {
     }
 
     @RequestMapping(value = "/custorders/cancelconfirm", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse custOrdersCancelConfirm(@RequestBody List<CustOrders> body, @RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse custOrdersCancelConfirm(@RequestBody CustOrders body, @RequestHeader("Authorization") String token) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
             Cred cred = jwtAuthenticalService.checkSession(token);

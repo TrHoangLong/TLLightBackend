@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -81,7 +82,15 @@ public class ProductServiceImpl implements IProductService {
     //==========================Product===========================================//
     @Override
     public List<Product> productGet(Cred cred, Product product) throws Exception {
-        return productDao.getList(cred, product);
+        List<Product> listProductResult = new ArrayList<>();
+
+        for(Product prd : productDao.getList(cred, product)) {
+            String linkImageProduct = IMAGE_PRODUCT + prd.getProductImage();
+            prd.setLinkProductImage(linkImageProduct);
+            listProductResult.add(prd);
+        }
+
+        return listProductResult;
     }
 
     @Override

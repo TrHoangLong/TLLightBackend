@@ -19,6 +19,6 @@ public interface ICustomerService {
     List<CustOrders> getCustOrders(Cred cred, CustOrders custOrders) throws Exception;
     void updateStatusCustOrders(Cred cred, List<CustOrders> custOrders) throws Exception;
     void cancelCustOrders(Cred cred, CustOrders custOrders) throws Exception;
-    void cancelConfirmCustOrders(Cred cred, List<CustOrders> custOrders) throws Exception;
+    void cancelConfirmCustOrders(Cred cred, CustOrders custOrders) throws Exception;
     List<CustOrders> getHistCustOrders(Cred cred, CustOrders custOrders) throws Exception;
 }

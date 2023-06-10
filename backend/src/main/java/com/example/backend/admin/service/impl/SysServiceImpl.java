@@ -1,7 +1,7 @@
 package com.example.backend.admin.service.impl;
 
-import com.example.backend.admin.auth.hash.MD5HashServiceImpl;
-import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;
+import com.example.backend.auth.hash.MD5HashServiceImpl;
+import com.example.backend.auth.jwt.JWTAuthenticalServiceImpl;
 import com.example.backend.admin.dao.ISysCartDao;
 import com.example.backend.admin.dao.ISysOrderDao;
 import com.example.backend.admin.dao.ISysUserDao;
@@ -62,7 +62,7 @@ public class SysServiceImpl implements ISysService {
     public String sysUserLogin(Cred cred, SysUser user) throws Exception {
         SysUser sysUser = sysUserDao.getByUserID(cred, user.getSysUserId());
 
-        if (sysUser.getSysUserId().isEmpty()) {
+        if (sysUser.getSysUserId() == null) {
             throw new GTException("Tài khoản không đúng", null, null);
         }
 

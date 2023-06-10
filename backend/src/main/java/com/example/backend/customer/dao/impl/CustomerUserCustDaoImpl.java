@@ -1,11 +1,11 @@
-package com.example.backend.admin.dao.impl.cust;
+package com.example.backend.customer.dao.impl;
 
 import com.example.backend.auth.hash.MD5HashServiceImpl;
-import com.example.backend.admin.dao.ICustomerUserDao;
+import com.example.backend.customer.dao.ICustomerUserCustDao;
 import com.example.backend.global.Utils;
 import com.example.common.base.Cred;
 import com.example.common.domain.cust.CustomerUser;
-import com.example.common.domain.cust.CustomerUserDisplay;
+import com.example.common.domain.sys.SysUser;
 import com.example.common.utils.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -14,16 +14,15 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @Repository
-public class CustomerUserDaoImpl implements ICustomerUserDao {
+public class CustomerUserCustDaoImpl implements ICustomerUserCustDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public CustomerUserDaoImpl(JdbcTemplate jdbcTemplate) {
+    public CustomerUserCustDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -31,40 +30,39 @@ public class CustomerUserDaoImpl implements ICustomerUserDao {
     private MD5HashServiceImpl md5HashService;
 
     @Override
-    public List<CustomerUserDisplay> get(Cred cred, CustomerUser user) throws Exception {
-        List<CustomerUserDisplay> resultList = new ArrayList<>();
+    public CustomerUser getByUserEmail(Cred cred, String email) throws Exception {
+        CustomerUser customerUser = new CustomerUser();
 
         try {
             SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
             MapSqlParameterSource params = new MapSqlParameterSource();
 
-            simpleJdbcCall.withProcedureName("CustomerUserGet")
-                    .returningResultSet("CustomerUserDisplay", BeanPropertyRowMapper.newInstance(CustomerUserDisplay.class));
-            params.addValue("CustUserId", user.getCustUserId() == null ? "" : user.getCustUserId())
-                    .addValue("Status", user.getStatus() == null ? 0 : user.getStatus());
+            simpleJdbcCall.withProcedureName("CustomerUserGetByEmail").returningResultSet("CustomerUser", BeanPropertyRowMapper.newInstance(CustomerUser.class));
+            params.addValue("Email", email);
 
             Map<String, Object> out = simpleJdbcCall.execute(params);
-            List<CustomerUserDisplay> displayList = (List<CustomerUserDisplay>) out.get("CustomerUserDisplay");
 
-            if (displayList != null && displayList.size() > 0) {
-                resultList = displayList;
+            List<CustomerUser> custUsers = (List<CustomerUser>) out.get("CustomerUser");
+
+            if (custUsers.size() > 0) {
+                customerUser = custUsers.get(0);
             }
         } catch (Exception ex) {
             throw Utils.processException(ex);
         }
 
-        return resultList;
+        return customerUser;
     }
 
     @Override
-    public String insert(Cred cred, CustomerUser user) throws Exception {
+    public String insert(CustomerUser user) throws Exception {
         String custUserId = "";
         try {
             SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
             MapSqlParameterSource params = new MapSqlParameterSource();
 
             simpleJdbcCall.withProcedureName("CustomerUserInsert");
-            params.addValue("UserId", cred.getUserId())
+            params.addValue("UserId", "")
                     .addValue("Password", md5HashService.hashMD5(user.getPassword()))
                     .addValue("CustName", user.getCustName())
                     .addValue("Gender", user.getGender())
@@ -72,7 +70,7 @@ public class CustomerUserDaoImpl implements ICustomerUserDao {
                     .addValue("MobileNo", user.getMobileNo())
                     .addValue("Email", user.getEmail())
                     .addValue("Address", user.getAddress())
-                    .addValue("Remarks", user.getRemarks());
+                    .addValue("Remarks", "KH đăng ký tài khoản");
 
             Map<String, Object> out = simpleJdbcCall.execute(params);
             custUserId = (String) out.get("CustUserId");
@@ -90,7 +88,7 @@ public class CustomerUserDaoImpl implements ICustomerUserDao {
             SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
             MapSqlParameterSource params = new MapSqlParameterSource();
 
-            simpleJdbcCall.withProcedureName("CustomerUserUpdate");
+            simpleJdbcCall.withProcedureName("CustomerUserUpdateByCust");
             params.addValue("UserId", cred.getUserId())
                     .addValue("CustName", user.getCustName())
                     .addValue("Gender", user.getGender())
@@ -98,8 +96,7 @@ public class CustomerUserDaoImpl implements ICustomerUserDao {
                     .addValue("MobileNo", user.getMobileNo())
                     .addValue("Email", user.getEmail())
                     .addValue("Address", user.getAddress())
-                    .addValue("Remarks", user.getRemarks())
-                    .addValue("CustUserId", user.getCustUserId());
+                    .addValue("Remarks", user.getRemarks());
 
             simpleJdbcCall.execute(params);
 
@@ -109,19 +106,27 @@ public class CustomerUserDaoImpl implements ICustomerUserDao {
     }
 
     @Override
-    public void delete(Cred cred, CustomerUser user) throws Exception {
+    public CustomerUser getByUserId(Cred cred,  CustomerUser user) throws Exception {
+        CustomerUser customerUser = new CustomerUser();
+
         try {
             SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
             MapSqlParameterSource params = new MapSqlParameterSource();
 
-            simpleJdbcCall.withProcedureName("CustomerUserDelete");
-            params.addValue("UserId", cred.getUserId())
-                    .addValue("CustUserId", user.getCustUserId());
+            simpleJdbcCall.withProcedureName("CustomerUserGetById").returningResultSet("CustomerUser", BeanPropertyRowMapper.newInstance(CustomerUser.class));
+            params.addValue("UserId", cred.getUserId());
 
-            simpleJdbcCall.execute(params);
+            Map<String, Object> out = simpleJdbcCall.execute(params);
 
+            List<CustomerUser> custUsers = (List<CustomerUser>) out.get("CustomerUser");
+
+            if (custUsers.size() > 0) {
+                customerUser = custUsers.get(0);
+            }
         } catch (Exception ex) {
             throw Utils.processException(ex);
         }
+
+        return customerUser;
     }
 }

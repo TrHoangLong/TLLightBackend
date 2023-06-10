@@ -47,7 +47,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public void productCategoriesInsert(Cred cred, ProductCategories productGroup) throws Exception {
 
-        if (cred.getRole() > 2) {
+        if (cred.getRole() != 2 && cred.getRole() != 1) {
             throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
         }
 
@@ -58,7 +58,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public void productCategoriesUpdate(Cred cred, ProductCategories productGroup) throws Exception {
 
-        if (cred.getRole() > 2) {
+        if (cred.getRole() != 2 && cred.getRole() != 1) {
             throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
         }
 
@@ -69,7 +69,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public void productCategoriesInsertExcel(Cred cred, List<ProductCategories> categoriesList) throws Exception {
 
-        if (cred.getRole() > 2) {
+        if (cred.getRole() != 2 && cred.getRole() != 1) {
             throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
         }
 
@@ -112,7 +112,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public void productInsert(Cred cred, HttpServletRequest request) throws Exception {
 
-        if (cred.getRole() > 2) {
+        if (cred.getRole() != 2 && cred.getRole() != 1) {
             throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
         }
 
@@ -136,7 +136,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public void productUpdate(Cred cred, HttpServletRequest request) throws Exception {
 
-        if (cred.getRole() > 2) {
+        if (cred.getRole() != 2 && cred.getRole() != 1) {
             throw new GTException("Tài khoản không đủ quyền để thực hiện hành động này", null, null);
         }
 

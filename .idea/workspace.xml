@@ -6,11 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="80b509cc-3bef-4323-bf53-cff502a5bb3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/AuthRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/AuthRestAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/CustomerAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/CustomerAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/ProductAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/ProductAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/api/SystemRestAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/hash/MD5HashService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/hash/MD5HashServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/jwt/JWTAuthenticalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/jwt/JWTAuthenticalServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/mail/EmailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/auth/mail/IEmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/cust/CustomerUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/cust/CustomerUserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/sys/SysUserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/SysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/service/impl/SysServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/cust/CustOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/cust/CustOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/example/common/domain/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/script/2.Procedure/SysCartOrder.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +183,23 @@
       <workItem from="1684038296222" duration="2675000" />
       <workItem from="1684081101049" duration="1257000" />
       <workItem from="1684154465149" duration="634000" />
+      <workItem from="1684328402775" duration="395000" />
+      <workItem from="1684423078050" duration="1063000" />
+      <workItem from="1684430376512" duration="2000" />
+      <workItem from="1684669876578" duration="816000" />
+      <workItem from="1685283759101" duration="65000" />
+      <workItem from="1685587426297" duration="50000" />
+      <workItem from="1685852129359" duration="2494000" />
+      <workItem from="1685880199648" duration="1088000" />
+      <workItem from="1685928436822" duration="3356000" />
+      <workItem from="1685969858458" duration="13588000" />
+      <workItem from="1686058262290" duration="9434000" />
+      <workItem from="1686228923351" duration="9665000" />
+      <workItem from="1686291892419" duration="1276000" />
+      <workItem from="1686325427464" duration="5660000" />
+      <workItem from="1686373377319" duration="2532000" />
+      <workItem from="1686384110819" duration="1653000" />
+      <workItem from="1686386146546" duration="82000" />
     </task>
     <servers />
   </component>
@@ -202,6 +233,11 @@
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/admin/dao/impl/cust/CustCartDaoImpl.java</url>
           <line>34</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/customer/service/impl/CustServiceImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

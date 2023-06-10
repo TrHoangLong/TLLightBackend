@@ -18,6 +18,7 @@ public class Product implements Serializable {
     private String UpdatedUserId;
     private Date UpdatedTime;
     private String LinkProductImage;
+    private String QuantityStatus;
 
     public String getProductId() {
         return ProductId;
@@ -131,5 +132,13 @@ public class Product implements Serializable {
 
     public void setLinkProductImage(String linkProductImage) {
         LinkProductImage = linkProductImage;
+    }
+
+    public String getQuantityStatus() {
+        return QuantityStatus;
+    }
+
+    public void setQuantityStatus(String quantityStatus) {
+        QuantityStatus = quantityStatus;
     }
 }

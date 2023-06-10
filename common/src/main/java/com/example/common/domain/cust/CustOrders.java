@@ -14,6 +14,7 @@ public class CustOrders {
     private Double totalPrice;
     private String updatedUserId;
     private Date updatedTime;
+    private Integer custCartId;
 
     public Date getCustOrderDate() {
         return custOrderDate;
@@ -101,5 +102,13 @@ public class CustOrders {
 
     public void setUpdatedTime(Date updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public Integer getCustCartId() {
+        return custCartId;
+    }
+
+    public void setCustCartId(Integer custCartId) {
+        this.custCartId = custCartId;
     }
 }

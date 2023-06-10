@@ -1,33 +1,26 @@
-package com.example.backend.admin.auth.jwt;
+package com.example.backend.auth.jwt;
 
-
-import com.example.backend.admin.dao.ISysUserDao;
 import com.example.backend.admin.dao.impl.token.TokenDaoImpl;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
-import com.example.common.domain.sys.SysUser;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.Date;
 
 @Component
 @Slf4j
-public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
-
+public class CustJWTAuthenticalServiceImpl implements JWTAuthenticalService {
     // Đoạn JWT_SECRET này là bí mật, chỉ có phía server biết
-    private final String JWT_SECRET = "longtrinh@1234";
+    private final String JWT_SECRET = "CUST-TL-LIGHT@2910";
 
     //Thời gian có hiệu lực của chuỗi jwt
-    private final long JWT_EXPIRATION = 1000 * 60 * 60 * 24; // 1 day
+    private final long JWT_EXPIRATION = 1000 * 60 * 60 * 24 * 2; // 2 day
 
     @Autowired
     private TokenDaoImpl tokenDao;
-
-    @Autowired
-    private ISysUserDao sysUserDao;
 
     @Override
     public String generateToken(Cred cred) throws Exception {
@@ -48,12 +41,10 @@ public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
     @Override
     public Cred getCredFromJWT(String token) throws Exception {
         Cred cred = new Cred();
-
         String userId = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody().getSubject();
-        SysUser sysUser = sysUserDao.getByUserID(cred, userId);
 
         cred.setUserId(userId);
-        cred.setRole(sysUser.getRole());
+        cred.setRole(4);
 
         if(cred == null) {
             throw new GTException("ErrToken: Không lấy được thông tin người dùng", null, null);
@@ -84,11 +75,11 @@ public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
     @Override
     public Cred checkSession(String token) throws Exception {
         if(token.isEmpty()) {
-            throw new GTException("ErrToken: Invalid token!!", null, null);
+            throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
         String tokenCheck = tokenDao.get(token);
         if (tokenCheck.isEmpty()) {
-            throw new GTException("ErrToken: Invalid token!!", null, null);
+            throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
 
         validateToken(token);

@@ -1,6 +1,6 @@
 package com.example.backend.admin.api;
 
-import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;
+import com.example.backend.auth.jwt.JWTAuthenticalServiceImpl;
 import com.example.backend.admin.service.ICustomerService;
 import com.example.common.base.BaseResponse;
 import com.example.common.base.Cred;
@@ -9,7 +9,6 @@ import com.example.common.domain.cust.CustCart;
 import com.example.common.domain.cust.CustOrders;
 import com.example.common.domain.cust.CustomerUser;
 import com.example.common.domain.cust.CustomerUserDisplay;
-import com.example.common.domain.product.ProductCategories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

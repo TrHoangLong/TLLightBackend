@@ -1,6 +1,6 @@
 package com.example.backend.admin.api;
 
-import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;
+import com.example.backend.auth.jwt.JWTAuthenticalServiceImpl;
 import com.example.backend.admin.service.ISysService;
 import com.example.common.base.BaseResponse;
 import com.example.common.base.Cred;

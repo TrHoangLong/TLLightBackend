@@ -92,9 +92,7 @@ BEGIN
 
 	UPDATE Product
 	SET 
-		Quantity = Quantity - @Quantity,
-		UpdatedUserId = @SysUserId,
-		UpdatedTime = GETDATE()
+		Quantity = Quantity - @Quantity
 	WHERE ProductId = @ProductId;
 
 	IF @IsSysOrder = 1

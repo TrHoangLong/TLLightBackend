@@ -1,8 +1,7 @@
 package com.example.backend.admin.api;
 
-import com.example.backend.admin.auth.jwt.JWTAuthenticalServiceImpl;
+import com.example.backend.auth.jwt.JWTAuthenticalServiceImpl;
 import com.example.backend.admin.service.IProductService;
-import com.example.backend.global.ImageUtility;
 import com.example.common.base.BaseResponse;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
@@ -10,8 +9,6 @@ import com.example.common.domain.product.Product;
 import com.example.common.domain.product.ProductCategories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

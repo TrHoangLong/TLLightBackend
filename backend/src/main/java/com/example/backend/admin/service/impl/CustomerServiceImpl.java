@@ -1,6 +1,6 @@
 package com.example.backend.admin.service.impl;
 
-import com.example.backend.admin.auth.mail.IEmailService;
+import com.example.backend.auth.mail.IEmailService;
 import com.example.backend.admin.dao.ICustCartDao;
 import com.example.backend.admin.dao.ICustOrdersDao;
 import com.example.backend.admin.dao.ICustomerUserDao;

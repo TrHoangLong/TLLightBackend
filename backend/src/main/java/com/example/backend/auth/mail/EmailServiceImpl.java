@@ -1,4 +1,4 @@
-package com.example.backend.admin.auth.mail;
+package com.example.backend.auth.mail;
 
 import com.example.backend.global.Utils;
 import org.springframework.beans.factory.annotation.Autowired;

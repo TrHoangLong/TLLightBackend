@@ -20,6 +20,12 @@ public class Product implements Serializable {
     private String LinkProductImage;
     private String QuantityStatus;
 
+    private Integer offset;
+    private Integer limit;
+    private Integer totalRows;
+
+    
+
     public String getProductId() {
         return ProductId;
     }
@@ -141,4 +147,30 @@ public class Product implements Serializable {
     public void setQuantityStatus(String quantityStatus) {
         QuantityStatus = quantityStatus;
     }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public Integer getTotalRows() {
+        return totalRows;
+    }
+
+    public void setTotalRows(Integer totalRows) {
+        this.totalRows = totalRows;
+    }
+
+    
 }

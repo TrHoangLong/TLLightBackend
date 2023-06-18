@@ -83,12 +83,12 @@ public class JWTAuthenticalServiceImpl implements JWTAuthenticalService {
 
     @Override
     public Cred checkSession(String token) throws Exception {
-        if(token.isEmpty()) {
-            throw new GTException("ErrToken: Invalid token!!", null, null);
+        if(token == null || token == "") {
+            throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
         String tokenCheck = tokenDao.get(token);
-        if (tokenCheck.isEmpty()) {
-            throw new GTException("ErrToken: Invalid token!!", null, null);
+        if (tokenCheck == null || tokenCheck == "") {
+            throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
 
         validateToken(token);

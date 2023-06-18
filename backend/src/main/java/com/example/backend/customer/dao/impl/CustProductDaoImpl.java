@@ -5,6 +5,7 @@ import com.example.backend.global.Utils;
 import com.example.common.base.Cred;
 import com.example.common.domain.cust.CustomerUser;
 import com.example.common.domain.product.Product;
+import com.example.common.domain.product.ProductCategories;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -36,6 +37,8 @@ public class CustProductDaoImpl implements ICustProductDao {
             params.addValue("UserId", cred.getUserId());
             params.addValue("ProductId", product.getProductId() == null ? "" : product.getProductId());
             params.addValue("CategoryId", product.getCategoryId() == null ? "" : product.getCategoryId());
+            params.addValue("Offset", product.getOffset() == null ? 0 : product.getOffset());
+            params.addValue("Limit", product.getLimit() == null ? 8 : product.getLimit());
 
             Map<String, Object> out = simpleJdbcCall.execute(params);
 
@@ -48,6 +51,32 @@ public class CustProductDaoImpl implements ICustProductDao {
             throw Utils.processException(ex);
         }
 
+        return resultData;
+    }
+
+    @Override
+    public List<ProductCategories> getCategories(Cred cred, ProductCategories productCategories) throws Exception {
+        List<ProductCategories> resultData = new ArrayList<>();
+
+        try {
+            SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(this.jdbcTemplate);
+            MapSqlParameterSource params = new MapSqlParameterSource();
+
+            simpleJdbcCall.withProcedureName("ProductCategoriesGet")
+                    .returningResultSet("ProductCategories", BeanPropertyRowMapper.newInstance(ProductCategories.class));
+            params.addValue("UserId", cred.getUserId())
+                    .addValue("CategoryId", productCategories.getCategoryId() == null ? "" : productCategories.getCategoryId())
+                    .addValue("Status", productCategories.getStatus() == null ? 0 : productCategories.getStatus());
+
+            Map<String, Object> out = simpleJdbcCall.execute(params);
+            List<ProductCategories> listCategories = (List<ProductCategories>) out.get("ProductCategories");
+
+            if(listCategories != null && listCategories.size() > 0) {
+                resultData = listCategories;
+            }
+        } catch (Exception ex) {
+            throw Utils.processException(ex);
+        }
         return resultData;
     }
 }

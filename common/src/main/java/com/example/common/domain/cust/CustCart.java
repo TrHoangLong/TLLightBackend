@@ -12,6 +12,9 @@ public class CustCart implements Serializable {
     private Double totalCart;
     private Integer status;
 
+    private String linkProductImage;
+    private String productImage;
+
     public String getCustCartId() {
         return custCartId;
     }
@@ -74,5 +77,21 @@ public class CustCart implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getLinkProductImage() {
+        return linkProductImage;
+    }
+
+    public void setLinkProductImage(String linkProductImage) {
+        this.linkProductImage = linkProductImage;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
     }
 }

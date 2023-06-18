@@ -12,6 +12,8 @@ public class CustProductDisplay {
     private String quantityStatus;
     private String linkProductImage;
 
+    private Integer totalRows;
+
     public String getProductId() {
         return productId;
     }
@@ -75,4 +77,13 @@ public class CustProductDisplay {
     public void setLinkProductImage(String linkProductImage) {
         this.linkProductImage = linkProductImage;
     }
+
+    public Integer getTotalRows() {
+        return totalRows;
+    }
+
+    public void setTotalRows(Integer totalRows) {
+        this.totalRows = totalRows;
+    }
+
 }

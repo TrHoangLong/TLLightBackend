@@ -74,11 +74,11 @@ public class CustJWTAuthenticalServiceImpl implements JWTAuthenticalService {
 
     @Override
     public Cred checkSession(String token) throws Exception {
-        if(token.isEmpty()) {
+        if(token == null || token == "") {
             throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
         String tokenCheck = tokenDao.get(token);
-        if (tokenCheck.isEmpty()) {
+        if (tokenCheck == null || tokenCheck == "") {
             throw new GTException("ErrToken: Hết hạn đăng nhập!!", null, null);
         }
 

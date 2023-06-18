@@ -11,10 +11,13 @@ import com.example.common.base.GTException;
 import com.example.common.domain.cust.CustCart;
 import com.example.common.domain.cust.CustOrders;
 import com.example.common.domain.cust.CustomerUser;
+import com.example.common.domain.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,6 +38,9 @@ public class CustServiceImpl implements ICustService {
 
     @Autowired
     private ICustOrderForCustDao custOrderForCustDao;
+
+    @Value("${image.config.imageProduct}")
+    private String IMAGE_PRODUCT;
 
     @Override
     public String custLogin(Cred cred, CustomerUser user) throws Exception {
@@ -77,7 +83,15 @@ public class CustServiceImpl implements ICustService {
 
     @Override
     public List<CustCart> getListCustCart(Cred cred, CustCart custCart) throws Exception {
-        return custCartForCustDao.get(cred, custCart);
+        List<CustCart> custCartList = new ArrayList<>();
+
+        for(CustCart prd : custCartForCustDao.get(cred, custCart)) {
+            String linkImageProduct = IMAGE_PRODUCT + prd.getProductImage();
+            prd.setLinkProductImage(linkImageProduct);
+            custCartList.add(prd);
+        }
+
+        return custCartList;
     }
 
     @Transactional(rollbackFor = { Exception.class })
@@ -114,7 +128,15 @@ public class CustServiceImpl implements ICustService {
 
     @Override
     public List<CustOrders> getListCustOrderForCust(Cred cred, CustOrders custOrders) throws Exception {
-        return custOrderForCustDao.getList(cred, custOrders);
+        List<CustOrders> custOrdersList = new ArrayList<>();
+
+        for (CustOrders custOrd : custOrderForCustDao.getList(cred, custOrders)) {
+            String linkImageProduct = IMAGE_PRODUCT + custOrd.getProductImage();
+            custOrd.setLinkProductImage(linkImageProduct);
+            custOrdersList.add(custOrd);
+        }
+
+        return custOrdersList;
     }
 
     @Transactional(rollbackFor = { Exception.class })

@@ -16,6 +16,14 @@ public class CustOrders {
     private Date updatedTime;
     private Integer custCartId;
 
+    private String productImage;
+    private String linkProductImage;
+
+    private String custName;
+    private String address;
+    private String mobileNo;
+
+
     public Date getCustOrderDate() {
         return custOrderDate;
     }
@@ -110,5 +118,45 @@ public class CustOrders {
 
     public void setCustCartId(Integer custCartId) {
         this.custCartId = custCartId;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
+
+    public String getLinkProductImage() {
+        return linkProductImage;
+    }
+
+    public void setLinkProductImage(String linkProductImage) {
+        this.linkProductImage = linkProductImage;
+    }
+
+    public String getCustName() {
+        return custName;
+    }
+
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
     }
 }

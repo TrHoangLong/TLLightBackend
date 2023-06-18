@@ -7,11 +7,13 @@ import com.example.backend.customer.service.ICustService;
 import com.example.common.base.BaseResponse;
 import com.example.common.base.Cred;
 import com.example.common.base.GTException;
+import com.example.common.domain.Token;
 import com.example.common.domain.cust.CustCart;
 import com.example.common.domain.cust.CustOrders;
 import com.example.common.domain.cust.CustomerUser;
 import com.example.common.domain.product.CustProductDisplay;
 import com.example.common.domain.product.Product;
+import com.example.common.domain.product.ProductCategories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -81,10 +83,10 @@ public class CustRestAPI {
     }
 
     @RequestMapping(value = "/checklogin", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse checkLogin(@RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse checkLogin(@RequestBody Token body) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
-            Cred cred = custJwtAuthenticalService.checkSession(token);
+            Cred cred = custJwtAuthenticalService.checkSession(body.getToken());
             response.setResultCode(0);
         } catch (GTException ex) {
             response.setErrorCode(ex.getGTErrorCode());
@@ -129,11 +131,28 @@ public class CustRestAPI {
     }
 
     @RequestMapping(value = "/product/get", method = RequestMethod.POST, produces = "application/json")
-    public BaseResponse productGet(@RequestBody Product body, @RequestHeader("Authorization") String token) throws Exception {
+    public BaseResponse productGet(@RequestBody Product body) throws Exception {
         BaseResponse response = new BaseResponse();
         try {
             Cred cred = new Cred();
             List<CustProductDisplay> productDisplayList = productService.productGetList(cred, body);
+            response.setData(productDisplayList);
+            response.setResultCode(0);
+        } catch (GTException ex) {
+            response.setErrorCode(ex.getGTErrorCode());
+            response.setErrorMsg(ex.getErrorMsg());
+        } catch (Exception ex) {
+            response.setErrorMsg(ex.getMessage());
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/categories/get", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse categoriesGet(@RequestBody ProductCategories body) throws Exception {
+        BaseResponse response = new BaseResponse();
+        try {
+            Cred cred = new Cred();
+            List<ProductCategories> productDisplayList = productService.categoriesGetList(cred, body);
             response.setData(productDisplayList);
             response.setResultCode(0);
         } catch (GTException ex) {

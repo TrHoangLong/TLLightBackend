@@ -5,6 +5,7 @@ import com.example.backend.customer.service.ICustProductService;
 import com.example.common.base.Cred;
 import com.example.common.domain.product.CustProductDisplay;
 import com.example.common.domain.product.Product;
+import com.example.common.domain.product.ProductCategories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -36,10 +37,16 @@ public class CustProductServiceImpl implements ICustProductService {
             display.setCategoryName(pro.getCategoryName());
             display.setQuantityStatus(pro.getQuantityStatus());
             display.setLinkProductImage(IMAGE_PRODUCT + pro.getProductImage());
+            display.setTotalRows(pro.getTotalRows());
 
             resultData.add(display);
         }
 
         return resultData;
+    }
+
+    @Override
+    public List<ProductCategories> categoriesGetList(Cred cred, ProductCategories productCategories) throws Exception {
+        return custProductDao.getCategories(cred, productCategories);
     }
 }

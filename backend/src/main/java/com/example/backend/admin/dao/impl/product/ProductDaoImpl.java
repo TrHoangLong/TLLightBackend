@@ -37,6 +37,8 @@ public class ProductDaoImpl implements IProductDao {
             params.addValue("ProductId", obj.getProductId() == null ? "" : obj.getProductId());
             params.addValue("CategoryId", obj.getCategoryId() == null ? "" : obj.getCategoryId());
             params.addValue("Status", obj.getStatus() == null ? 0 : obj.getStatus());
+            params.addValue("Offset", obj.getOffset() == null ? 0 : obj.getOffset());
+            params.addValue("Limit", obj.getLimit() == null ? 8 : obj.getLimit());
 
             Map<String, Object> out = simpleJdbcCall.execute(params);
             List<Product> listProduct = (List<Product>) out.get("Product");

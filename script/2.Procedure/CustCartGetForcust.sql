@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[CustCartGetForcust]    Script Date: 6/22/2023 7:27:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustCartGetForcust]    Script Date: 6/22/2023 9:43:20 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustCartGetForcust]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustCartGetForcust]    Script Date: 6/22/2023 7:27:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustCartGetForcust]    Script Date: 6/22/2023 9:43:20 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -24,8 +24,8 @@ BEGIN
 	SELECT cc.*, p.ProductName, p.ProductImage, (cc.Quantity * cc.ProductPrice) AS TotalCart FROM CustCart cc
 	INNER JOIN Product p ON cc.ProductId = p.ProductId
 	WHERE cc.CustUserId = @UserId
+	ORDER BY cc.Status DESC
 
 END
 GO
-
 

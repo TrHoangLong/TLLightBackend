@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 6/22/2023 7:34:22 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersGet]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 6/22/2023 7:34:22 PM ******/
 SET ANSI_NULLS ON
 GO
 

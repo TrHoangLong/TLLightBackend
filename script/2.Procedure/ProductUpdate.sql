@@ -1,13 +1,15 @@
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/23/2023 12:21:36 AM ******/
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 6/22/2023 7:39:58 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductUpdate]
 GO
 
-/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 4/23/2023 12:21:36 AM ******/
+/****** Object:  StoredProcedure [dbo].[ProductUpdate]    Script Date: 6/22/2023 7:39:58 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
+
 
 
 -- =============================================

@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[TokenGet]    Script Date: 4/10/2023 9:09:45 PM ******/
+/****** Object:  StoredProcedure [dbo].[TokenGet]    Script Date: 6/22/2023 7:45:27 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[TokenGet]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[TokenGet]    Script Date: 4/10/2023 9:09:45 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[TokenGet]    Script Date: 6/22/2023 7:45:27 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 
@@ -21,7 +21,7 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-SELECT * FROM Token WHERE Token LIKE @Token
+	SELECT * FROM Token WHERE Token LIKE @Token 
 END
 GO
 

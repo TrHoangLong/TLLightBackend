@@ -1,13 +1,14 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersHistGet]    Script Date: 5/9/2023 8:48:19 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersHistGet]    Script Date: 6/22/2023 7:34:57 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersHistGet]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersHistGet]    Script Date: 5/9/2023 8:48:19 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersHistGet]    Script Date: 6/22/2023 7:34:57 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 

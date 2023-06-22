@@ -1,13 +1,14 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersUpdateStatus]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersUpdateStatus]    Script Date: 6/22/2023 7:35:11 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersUpdateStatus]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersUpdateStatus]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersUpdateStatus]    Script Date: 6/22/2023 7:35:11 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 -- =============================================
 -- Author:		<Author,,Name>
@@ -40,5 +41,4 @@ BEGIN
 
 END
 GO
-
 

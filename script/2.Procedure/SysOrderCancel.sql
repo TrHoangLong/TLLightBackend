@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysOrderCancel]   Script Date: 4/26/2023 10:02:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysOrderCancel]    Script Date: 6/22/2023 7:41:44 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysOrderCancel]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysOrderCancel]    Script Date: 4/26/2023 10:02:04 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysOrderCancel]    Script Date: 6/22/2023 7:41:44 PM ******/
 SET ANSI_NULLS ON
 GO
 

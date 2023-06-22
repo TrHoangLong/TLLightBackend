@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[TokenInsert]    Script Date: 4/10/2023 9:09:57 PM ******/
+/****** Object:  StoredProcedure [dbo].[TokenInsert]    Script Date: 6/22/2023 7:46:40 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[TokenInsert]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[TokenInsert]    Script Date: 4/10/2023 9:09:57 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[TokenInsert]    Script Date: 6/22/2023 7:46:40 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 
@@ -21,14 +21,14 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-INSERT INTO Token
-(
-    Token
-)
-VALUES
-    (
-        @Token
-    );
+	INSERT INTO Token
+	(
+		Token
+	)
+	VALUES
+	(
+		@Token
+	);
 END
 GO
 

@@ -1,20 +1,20 @@
-/****** Object:  StoredProcedure [dbo].[TokenDelete]    Script Date: 4/10/2023 9:09:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[TokenDelete]    Script Date: 6/22/2023 7:45:14 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[TokenDelete]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[TokenDelete]    Script Date: 4/10/2023 9:09:29 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[TokenDelete]    Script Date: 6/22/2023 7:45:14 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[TokenDelete]
+CREATE PROCEDURE [dbo].[TokenDelete] 
 	@Token VARCHAR(500)
 AS
 BEGIN
@@ -22,8 +22,8 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-DELETE FROM Token
-WHERE Token LIKE @Token;
+    DELETE FROM Token
+	WHERE Token LIKE @Token;
 END
 GO
 

@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysCartDelete]    Script Date: 4/24/2023 8:46:39 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartDelete]    Script Date: 6/22/2023 7:40:21 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysCartDelete]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysCartDelete]    Script Date: 4/24/2023 8:46:39 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartDelete]    Script Date: 6/22/2023 7:40:21 PM ******/
 SET ANSI_NULLS ON
 GO
 

@@ -1,13 +1,15 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersCancel]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersCancel]    Script Date: 6/22/2023 7:33:42 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersCancel]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersCancel]    Script Date: 5/8/2023 10:42:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersCancel]    Script Date: 6/22/2023 7:33:42 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
+
 
 -- =============================================
 -- Author:		<Author,,Name>
@@ -24,6 +26,18 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
+	IF EXISTS (SELECT 1 FROM CustOrders WHERE CustOrderDate = @CustOrderDate AND CustOrderId = @CustOrderId AND OrderStatus = 9)
+	BEGIN
+		RAISERROR (N'Đơn hàng này đã hủy', 15, 1);
+		RETURN;
+	END
+
+	IF EXISTS (SELECT 1 FROM CustOrders WHERE CustOrderDate = @CustOrderDate AND CustOrderId = @CustOrderId AND OrderStatus = 8)
+	BEGIN
+		RAISERROR (N'Đơn hàng này đã yêu cầu hủy', 15, 1);
+		RETURN;
+	END
+
 	UPDATE CustOrders
 	SET 
 		OrderStatus = 8,
@@ -33,5 +47,4 @@ BEGIN
 
 END
 GO
-
 

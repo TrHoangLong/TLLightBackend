@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersCancelConfirm]    Script Date: 6/10/2023 4:17:28 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersCancelConfirm]    Script Date: 6/22/2023 7:34:01 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersCancelConfirm]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersCancelConfirm]    Script Date: 6/10/2023 4:17:28 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersCancelConfirm]    Script Date: 6/22/2023 7:34:01 PM ******/
 SET ANSI_NULLS ON
 GO
 

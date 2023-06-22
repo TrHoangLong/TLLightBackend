@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesInsert]    Script Date: 4/10/2023 9:08:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesInsert]    Script Date: 6/22/2023 7:37:17 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductCategoriesInsert]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesInsert]    Script Date: 4/10/2023 9:08:47 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesInsert]    Script Date: 6/22/2023 7:37:17 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 -- =============================================
 -- Author:		<Author,,Name>

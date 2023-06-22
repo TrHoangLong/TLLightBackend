@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysUserGetList]    Script Date: 4/27/2023 10:58:27 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysUserGetList]    Script Date: 6/22/2023 7:44:42 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysUserGetList]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysUserGetList]    Script Date: 4/27/2023 10:58:27 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysUserGetList]    Script Date: 6/22/2023 7:44:42 PM ******/
 SET ANSI_NULLS ON
 GO
 

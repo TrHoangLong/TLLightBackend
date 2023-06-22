@@ -1,13 +1,14 @@
-/****** Object:  StoredProcedure [dbo].[SysCartInsert]    Script Date: 4/24/2023 8:46:25 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartInsert]    Script Date: 6/22/2023 7:41:08 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysCartInsert]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysCartInsert]    Script Date: 4/24/2023 8:46:25 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysCartInsert]    Script Date: 6/22/2023 7:41:08 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 

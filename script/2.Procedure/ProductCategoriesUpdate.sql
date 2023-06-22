@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesUpdate]    Script Date: 4/10/2023 9:08:53 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesUpdate]    Script Date: 6/22/2023 7:38:28 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductCategoriesUpdate]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesUpdate]    Script Date: 4/10/2023 9:08:53 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesUpdate]    Script Date: 6/22/2023 7:38:28 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 -- =============================================
@@ -27,18 +27,18 @@ BEGIN
 	SET NOCOUNT ON;
 
 	IF NOT EXISTS (SELECT 1 FROM ProductCategories WHERE CategoryId = @CategoryId)
-BEGIN
+	BEGIN
 		RAISERROR (N'Danh mục sản phẩm không tồn tại', 15, 1);
 		RETURN;
-END
+	END
 
-UPDATE ProductCategories
-SET
-    CategoryName = @CategoryName,
-    [Status] = @Status,
-    UpdatedUserId = @UserId,
-    UpdatedTime = GETDATE()
-WHERE CategoryId = @CategoryId;
+	UPDATE ProductCategories
+	SET
+		CategoryName = @CategoryName,
+		[Status] = @Status,
+		UpdatedUserId = @UserId, 
+		UpdatedTime = GETDATE()
+	WHERE CategoryId = @CategoryId;
 END
 GO
 

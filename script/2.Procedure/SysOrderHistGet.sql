@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[SysOrderHistGet]    Script Date: 5/9/2023 8:50:17 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysOrderHistGet]    Script Date: 6/22/2023 7:43:28 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[SysOrderHistGet]
 GO
 
-/****** Object:  StoredProcedure [dbo].[SysOrderHistGet]    Script Date: 5/9/2023 8:50:17 PM ******/
+/****** Object:  StoredProcedure [dbo].[SysOrderHistGet]    Script Date: 6/22/2023 7:43:28 PM ******/
 SET ANSI_NULLS ON
 GO
 

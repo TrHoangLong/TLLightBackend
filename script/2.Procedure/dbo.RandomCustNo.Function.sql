@@ -1,8 +1,8 @@
-/****** Object:  UserDefinedFunction [dbo].[RandomCustNo]    Script Date: 4/23/2023 9:42:43 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[RandomCustNo]    Script Date: 6/22/2023 7:21:23 PM ******/
 DROP FUNCTION IF EXISTS [dbo].[RandomCustNo]
 GO
 
-/****** Object:  UserDefinedFunction [dbo].[RandomCustNo]    Script Date: 4/23/2023 9:42:43 PM ******/
+/****** Object:  UserDefinedFunction [dbo].[RandomCustNo]    Script Date: 6/22/2023 7:21:23 PM ******/
 SET ANSI_NULLS ON
 GO
 

@@ -1,13 +1,13 @@
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesGet]    Script Date: 4/10/2023 9:08:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesGet]    Script Date: 6/22/2023 7:36:16 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[ProductCategoriesGet]
-    GO
+GO
 
-/****** Object:  StoredProcedure [dbo].[ProductCategoriesGet]    Script Date: 4/10/2023 9:08:40 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  StoredProcedure [dbo].[ProductCategoriesGet]    Script Date: 6/22/2023 7:36:16 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 -- =============================================
 -- Author:		<Author,,Name>
@@ -24,9 +24,9 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-SELECT * FROM ProductCategories
-WHERE (CategoryId = @CategoryId OR @CategoryId = '')
-  AND ([Status] = @Status OR @Status = 0);
+    SELECT * FROM ProductCategories 
+	WHERE (CategoryId = @CategoryId OR @CategoryId = '')
+	AND ([Status] = @Status OR @Status = 0);
 END
 GO
 

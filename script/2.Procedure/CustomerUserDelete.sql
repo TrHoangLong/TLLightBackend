@@ -1,13 +1,14 @@
-/****** Object:  StoredProcedure [dbo].[CustomerUserDelete]    Script Date: 5/6/2023 2:53:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustomerUserDelete]    Script Date: 6/22/2023 7:29:16 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustomerUserDelete]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustomerUserDelete]    Script Date: 5/6/2023 2:53:20 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustomerUserDelete]    Script Date: 6/22/2023 7:29:16 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 -- =============================================

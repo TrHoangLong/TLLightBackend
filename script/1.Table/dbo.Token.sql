@@ -1,21 +1,21 @@
-/****** Object:  Table [dbo].[Token]    Script Date: 4/8/2023 10:54:31 PM ******/
+/****** Object:  Table [dbo].[Token]    Script Date: 6/22/2023 7:16:32 PM ******/
 DROP TABLE IF EXISTS [dbo].[Token]
-    GO
+GO
 
-/****** Object:  Table [dbo].[Token]    Script Date: 4/8/2023 10:54:31 PM ******/
-    SET ANSI_NULLS ON
-    GO
+/****** Object:  Table [dbo].[Token]    Script Date: 6/22/2023 7:16:32 PM ******/
+SET ANSI_NULLS ON
+GO
 
-    SET QUOTED_IDENTIFIER ON
-    GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE TABLE [dbo].[Token](
-    [Token] [varchar](500) NOT NULL,
-    PRIMARY KEY CLUSTERED
+	[Token] [varchar](500) NOT NULL,
+PRIMARY KEY CLUSTERED 
 (
-[Token] ASC
+	[Token] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-    ) ON [PRIMARY]
-    GO
+) ON [PRIMARY]
+GO
 
 

@@ -1,16 +1,16 @@
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CustOrdersHist]') AND type in (N'U'))
-ALTER TABLE [dbo].[CustOrdersHist] DROP CONSTRAINT IF EXISTS [FK__CustOrder__Produ__4CC05EF3]
+ALTER TABLE [dbo].[CustOrdersHist] DROP CONSTRAINT IF EXISTS [FK__CustOrder__Produ__17E28260]
 GO
 
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CustOrdersHist]') AND type in (N'U'))
-ALTER TABLE [dbo].[CustOrdersHist] DROP CONSTRAINT IF EXISTS [FK__CustOrder__CustU__4DB4832C]
+ALTER TABLE [dbo].[CustOrdersHist] DROP CONSTRAINT IF EXISTS [FK__CustOrder__CustU__16EE5E27]
 GO
 
-/****** Object:  Table [dbo].[CustOrdersHist]    Script Date: 6/22/2023 7:12:29 PM ******/
+/****** Object:  Table [dbo].[CustOrdersHist]    Script Date: 6/29/2023 12:19:00 AM ******/
 DROP TABLE IF EXISTS [dbo].[CustOrdersHist]
 GO
 
-/****** Object:  Table [dbo].[CustOrdersHist]    Script Date: 6/22/2023 7:12:29 PM ******/
+/****** Object:  Table [dbo].[CustOrdersHist]    Script Date: 6/29/2023 12:19:00 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -22,6 +22,8 @@ CREATE TABLE [dbo].[CustOrdersHist](
 	[CustOrderId] [int] NOT NULL,
 	[OrderStatus] [int] NOT NULL,
 	[CustUserId] [varchar](30) NOT NULL,
+	[MobileNo] [varchar](20) NOT NULL,
+	[Address] [nvarchar](500) NOT NULL,
 	[ProductId] [varchar](20) NOT NULL,
 	[Quantity] [decimal](18, 0) NOT NULL,
 	[ProductPrice] [decimal](28, 6) NOT NULL,

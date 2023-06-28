@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[CustOrderInsert]    Script Date: 6/22/2023 7:33:18 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrderInsert]    Script Date: 6/28/2023 9:23:55 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrderInsert]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrderInsert]    Script Date: 6/22/2023 7:33:18 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrderInsert]    Script Date: 6/28/2023 9:23:55 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -15,6 +15,8 @@ CREATE PROCEDURE [dbo].[CustOrderInsert]
 	@UserId VARCHAR(30),
 	@ProductId VARCHAR(30),
 	@Quantity DECIMAL(18,0),
+	@MobileNo VARCHAR(20),
+	@Address NVARCHAR(500),
 	@IsCustCartOrder BIT,
 	@CustCartId INT
 AS
@@ -52,6 +54,8 @@ BEGIN
 		[CustOrderDate]
 		,[OrderStatus]
 		,[CustUserId]
+		,[MobileNo]
+		,[Address]
 		,[ProductId]
 		,[Quantity]
 		,[ProductPrice]
@@ -64,6 +68,8 @@ BEGIN
 		dbo.GetBusinessDate(),
 		1,
 		@UserId,
+		@MobileNo,
+		@Address,
 		@ProductId,
 		@Quantity,
 		@ProductPrice,

@@ -36,6 +36,8 @@ public class CustOrderForCustDaoImpl implements ICustOrderForCustDao {
             params.addValue("UserId", cred.getUserId())
                     .addValue("ProductId", custOrders.getProductId())
                     .addValue("Quantity", custOrders.getQuantity())
+                    .addValue("MobileNo", custOrders.getMobileNo())
+                    .addValue("Address", custOrders.getAddress())
                     .addValue("IsCustCartOrder", true)
                     .addValue("CustCartId", custOrders.getCustCartId());
 
@@ -56,6 +58,8 @@ public class CustOrderForCustDaoImpl implements ICustOrderForCustDao {
             params.addValue("UserId", cred.getUserId())
                     .addValue("ProductId", custOrders.getProductId())
                     .addValue("Quantity", custOrders.getQuantity())
+                    .addValue("MobileNo", custOrders.getMobileNo())
+                    .addValue("Address", custOrders.getAddress())
                     .addValue("IsCustCartOrder", false)
                     .addValue("CustCartId", 0);
 

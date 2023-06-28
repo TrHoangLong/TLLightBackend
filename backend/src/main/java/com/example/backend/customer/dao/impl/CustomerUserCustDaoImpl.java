@@ -106,7 +106,7 @@ public class CustomerUserCustDaoImpl implements ICustomerUserCustDao {
     }
 
     @Override
-    public CustomerUser getByUserId(Cred cred,  CustomerUser user) throws Exception {
+    public CustomerUser getByUserId(Cred cred, CustomerUser user) throws Exception {
         CustomerUser customerUser = new CustomerUser();
 
         try {

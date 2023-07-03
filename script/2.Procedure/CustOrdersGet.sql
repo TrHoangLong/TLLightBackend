@@ -1,8 +1,8 @@
-/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 6/22/2023 7:34:22 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 7/1/2023 9:41:56 AM ******/
 DROP PROCEDURE IF EXISTS [dbo].[CustOrdersGet]
 GO
 
-/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 6/22/2023 7:34:22 PM ******/
+/****** Object:  StoredProcedure [dbo].[CustOrdersGet]    Script Date: 7/1/2023 9:41:56 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -25,8 +25,9 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-    SELECT co.*, p.ProductName FROM CustOrders co
+    SELECT co.*, p.ProductName, cu.CustName FROM CustOrders co
 	LEFT JOIN Product p ON p.ProductId = co.ProductId
+	LEFT JOIN CustomerUser cu ON cu.CustUserId = co.CustUserId
 	WHERE (co.ProductId = @ProductId OR @ProductId = '')
 	AND (co.CustUserId = @CustUserId OR @CustUserId = '')
 	AND (co.OrderStatus = @OrderStatus OR @OrderStatus = 0)

@@ -33,7 +33,12 @@ public class CustProductServiceImpl implements ICustProductService {
             display.setCategoryId(pro.getCategoryId());
             display.setProductPrice(pro.getProductPrice());
             display.setProductName(pro.getProductName());
-            display.setDescription(pro.getDescription());
+            display.setWattage(pro.getWattage());
+            display.setMaterial(pro.getMaterial());
+            display.setBattery(pro.getBattery());
+            display.setBatterySize(pro.getBatterySize());
+            display.setLightingTime(pro.getLightingTime());
+            display.setChargingTime(pro.getChargingTime());
             display.setCategoryName(pro.getCategoryName());
             display.setQuantityStatus(pro.getQuantityStatus());
             display.setLinkProductImage(IMAGE_PRODUCT + pro.getProductImage());

@@ -64,7 +64,12 @@ public class ProductDaoImpl implements IProductDao {
             params.addValue("CategoryId", obj.getCategoryId());
             params.addValue("ProductName", obj.getProductName());
             params.addValue("ProductPrice", obj.getProductPrice());
-            params.addValue("Description", obj.getDescription());
+            params.addValue("Wattage", obj.getWattage());
+            params.addValue("Material", obj.getMaterial());
+            params.addValue("Battery", obj.getBattery());
+            params.addValue("BatterySize", obj.getBatterySize());
+            params.addValue("LightingTime", obj.getLightingTime());
+            params.addValue("ChargingTime", obj.getChargingTime());
             params.addValue("Quantity", obj.getQuantity());
             params.addValue("ProductImage", obj.getProductImage());
             params.addValue("Status", obj.getStatus());
@@ -87,7 +92,12 @@ public class ProductDaoImpl implements IProductDao {
             params.addValue("CategoryId", obj.getCategoryId());
             params.addValue("ProductName", obj.getProductName());
             params.addValue("ProductPrice", obj.getProductPrice());
-            params.addValue("Description", obj.getDescription());
+            params.addValue("Wattage", obj.getWattage());
+            params.addValue("Material", obj.getMaterial());
+            params.addValue("Battery", obj.getBattery());
+            params.addValue("BatterySize", obj.getBatterySize());
+            params.addValue("LightingTime", obj.getLightingTime());
+            params.addValue("ChargingTime", obj.getChargingTime());
             params.addValue("Quantity", obj.getQuantity());
             params.addValue("ProductImage", obj.getProductImage());
             params.addValue("Status", obj.getStatus());
